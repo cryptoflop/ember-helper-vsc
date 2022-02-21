@@ -1,0 +1,52 @@
+{
+  "name": "vs-ember-helper",
+  "displayName": "VS Ember Helper",
+  "description": "Ember helper for Visual Studio Code",
+  "version": "0.0.4",
+  "author": "Max David",
+  "publisher": "max-david",
+  "icon": "vs-ember-helper.jpg",
+  "engines": {
+    "vscode": "^1.13.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Ember Build Configuration",
+      "properties": {
+        "emberbuild.path": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null,
+          "description": "Specifies the file path the the buile bat to use for ember build."
+        }
+      }
+    }
+  },
+  "main": "./out/src/extension",
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "2.9.2",
+    "vscode": "1.1.18",
+    "mocha": "5.2.0",
+    "@types/node": "^8.0.0",
+    "@types/mocha": "5.2.5"
+  },
+  "dependencies": {
+    "filendir": "^1.0.1",
+    "tree-kill": "^1.2.0"
+  }
+}
